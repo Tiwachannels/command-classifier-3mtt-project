@@ -53,6 +53,16 @@ st.markdown("""
         padding: 1.2rem 0;
         font-size: 0.92rem;
     }
+    .model-card p {
+    font-size: 1.2rem;
+    }
+    .model-card div[role="radiogroup"] {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .model-card div[role="radiogroup"] label p {
+        font-size: 1.05rem !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -215,7 +225,7 @@ st.write("")
 # Model selector card
 # ---------------------------------------------------------------------------
 st.markdown('<div class="model-card">', unsafe_allow_html=True)
-st.markdown("<p style='margin-bottom:0.4rem; font-weight:600;'>Model</p>", unsafe_allow_html=True)
+st.markdown("<p style='margin-bottom:0.4rem; font-weight:600; font-size:1.2rem;'>Model</p>", unsafe_allow_html=True)
 model_label = st.radio(
     "Model",
     options=["telecom", "general"],
@@ -238,7 +248,6 @@ with tab_result:
 with tab_voice:
     st.markdown(
         "Use the **🎤 record button** in the message bar at the bottom of the page to speak a command, "
-        "or attach a short audio file (wav/mp3/m4a) with the **📎 attach icon**.\n\n"
         "Your speech is transcribed with Whisper, then classified the same way as typed text."
     )
 
