@@ -4,6 +4,11 @@ Streamlit UI for the Voice/Text Command Classifier.
 Run with: streamlit run streamlit_app.py
 Expects the FastAPI backend to be running (default: http://localhost:8000).
 Set API_URL via Streamlit secrets or the API_URL env var to point elsewhere.
+
+Note on the floating input: st.chat_input always docks to the true bottom
+of the browser viewport (that's a native Streamlit behavior, not CSS) so
+the user never has to scroll to find it. It supports typed text AND
+in-browser voice recording (accept_audio=True) in a single control.
 """
 import os
 import streamlit as st
@@ -14,12 +19,45 @@ try:
 except (KeyError, FileNotFoundError):
     API_URL = os.environ.get("API_URL", "http://localhost:8000")
 
-st.set_page_config(page_title="Voice/Text Command Classifier", page_icon="📞", layout="wide")
+st.set_page_config(page_title="Command Classifier", page_icon="📞", layout="wide")
 
 # ---------------------------------------------------------------------------
-# Topic groupings (used in the sidebar). Telecom is fully enumerated since
-# it's small (22 intents); general is grouped by rough category since 150
-# individual intents would be overwhelming to list.
+# Global styling: Poppins font + light card backgrounds
+# ---------------------------------------------------------------------------
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+    html, body, [class*="css"], .stMarkdown, .stButton button,
+    .stTextInput input, .stRadio label, .stTabs [data-baseweb="tab"] {
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .model-card {
+        background: #f4f4f6;
+        border-radius: 14px;
+        padding: 1.1rem 1rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+    .content-card {
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: 14px;
+        padding: 1.3rem 1.4rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .result-empty {
+        text-align: center;
+        color: #9aa0a6;
+        padding: 1.2rem 0;
+        font-size: 0.92rem;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Topic groupings (sidebar)
 # ---------------------------------------------------------------------------
 TELECOM_TOPICS = {
     "💰 Balance & Recharge": ["Check balance", "Recharge airtime", "Data balance", "Buy data bundle"],
@@ -38,99 +76,70 @@ GENERAL_TOPICS = {
     "💬 Small Talk & Assistant Chat": 49,
 }
 
-# ---------------------------------------------------------------------------
-# Sidebar
-# ---------------------------------------------------------------------------
-with st.sidebar:
-    st.markdown("### 🇳🇬 Command Classifier")
-    st.caption(
-        "An AI system that understands spoken or typed commands — in plain "
-        "English or Nigerian Pidgin — and routes them instantly."
-    )
-    st.divider()
-
-    model_label = st.radio(
-        "Model",
-        options=["telecom", "general"],
-        format_func=lambda x: "📡 Telecom IVR" if x == "telecom" else "🌍 General Assistant",
-    )
-
-    st.divider()
-
-    with st.expander("📋 Topics Covered", expanded=True):
-        if model_label == "telecom":
-            for category, items in TELECOM_TOPICS.items():
-                st.markdown(f"**{category}**")
-                for item in items:
-                    st.markdown(f"- {item}")
-        else:
-            st.caption("150 intents grouped by category:")
-            for category, count in GENERAL_TOPICS.items():
-                st.markdown(f"- {category}  \n  <span style='opacity:0.6;font-size:0.8em'>~{count} intents</span>",
-                            unsafe_allow_html=True)
-
-# ---------------------------------------------------------------------------
-# Main heading
-# ---------------------------------------------------------------------------
-st.markdown(
-    "<h1 style='text-align:center; margin-bottom:0.2rem;'>🇳🇬 Command Classifier</h1>",
-    unsafe_allow_html=True,
-)
-st.markdown(
-    "<p style='text-align:center; color:gray; font-size:1.05rem;'>"
-    "Say what you need — in English or Pidgin — and get routed instantly.</p>",
-    unsafe_allow_html=True,
-)
-st.divider()
-
-# ---------------------------------------------------------------------------
-# Try asking
-# ---------------------------------------------------------------------------
-if "prefill_text" not in st.session_state:
-    st.session_state.prefill_text = ""
-
-st.markdown("#### 💡 Try asking")
-
-pidgin_examples = [
+PIDGIN_EXAMPLES = [
     "abeg check my balance for me",
     "block my sim, dem steal my phone",
     "abeg recharge my line with 500 naira",
 ]
-english_examples = [
+ENGLISH_EXAMPLES = [
     "What's my current data balance?",
     "I'd like to activate roaming",
     "Can you connect me to an agent?",
 ]
 
-col1, col2 = st.columns(2)
-with col1:
-    st.markdown("**🗣️ Pidgin**")
-    for q in pidgin_examples:
-        if st.button(q, key=f"pg_{q}", use_container_width=True):
-            st.session_state.prefill_text = q
-            st.rerun()
-with col2:
-    st.markdown("**🇬🇧 Plain English**")
-    for q in english_examples:
-        if st.button(q, key=f"en_{q}", use_container_width=True):
-            st.session_state.prefill_text = q
-            st.rerun()
+# ---------------------------------------------------------------------------
+# Session state
+# ---------------------------------------------------------------------------
+if "last_result" not in st.session_state:
+    st.session_state.last_result = None
+if "model_label" not in st.session_state:
+    st.session_state.model_label = "telecom"
 
-st.markdown(
-    "<p style='text-align:center; color:gray; font-size:0.8rem; margin-top:1rem;'>"
-    "Voice/Text Command Classifier • AI/ML Project<br>"
-    "Powered by TF-IDF + Logistic Regression, and OpenAI Whisper for speech</p>",
-    unsafe_allow_html=True,
-)
-st.divider()
 
 # ---------------------------------------------------------------------------
-# Interaction area
+# Classification helpers
 # ---------------------------------------------------------------------------
-tab_text, tab_voice, tab_intents = st.tabs(["💬 Text", "🎙️ Voice", "📋 All Supported Intents"])
+def classify_text(text: str, model: str):
+    try:
+        resp = requests.post(
+            f"{API_URL}/predict/text",
+            json={"text": text, "model": model},
+            timeout=10,
+        )
+        resp.raise_for_status()
+        st.session_state.last_result = resp.json()
+    except requests.exceptions.ConnectionError:
+        st.session_state.last_result = {"error": f"Can't reach the API at {API_URL}. Is the backend running?"}
+    except Exception as e:
+        st.session_state.last_result = {"error": f"Error: {e}"}
+
+
+def classify_audio(file_bytes: bytes, filename: str, model: str):
+    try:
+        files = {"file": (filename, file_bytes)}
+        resp = requests.post(
+            f"{API_URL}/predict/audio",
+            params={"model": model},
+            files=files,
+            timeout=60,
+        )
+        resp.raise_for_status()
+        st.session_state.last_result = resp.json()
+    except requests.exceptions.ConnectionError:
+        st.session_state.last_result = {"error": f"Can't reach the API at {API_URL}. Is the backend running?"}
+    except Exception as e:
+        st.session_state.last_result = {"error": f"Error: {e}"}
 
 
 def render_result(result: dict):
+    if result is None:
+        st.markdown('<p class="result-empty">💡 Ask a question below, or tap a suggestion in the sidebar, '
+                    'to see a prediction here.</p>', unsafe_allow_html=True)
+        return
+    if "error" in result:
+        st.error(result["error"])
+        return
+
     intent = result["intent"]
     confidence = result["confidence"]
     transcript = result.get("transcript")
@@ -148,47 +157,90 @@ def render_result(result: dict):
         st.bar_chart(result["all_scores"])
 
 
-with tab_text:
-    text_input = st.text_input(
-        "Ask a command...",
-        value=st.session_state.prefill_text,
-        key="text_input_field",
-        label_visibility="collapsed",
-        placeholder="e.g. 'abeg recharge my line with 500 naira' or 'check my balance'",
+# ---------------------------------------------------------------------------
+# Sidebar
+# ---------------------------------------------------------------------------
+with st.sidebar:
+    st.markdown("### 🇳🇬 Command Classifier")
+    st.caption(
+        "An AI system that understands spoken or typed commands — in plain "
+        "English or Nigerian Pidgin — and routes them instantly."
     )
-    if st.button("Classify", key="text_btn", type="primary") and text_input.strip():
-        try:
-            resp = requests.post(
-                f"{API_URL}/predict/text",
-                json={"text": text_input, "model": model_label},
-                timeout=10,
-            )
-            resp.raise_for_status()
-            render_result(resp.json())
-        except requests.exceptions.ConnectionError:
-            st.error(f"Can't reach the API at {API_URL}. Is the backend running?")
-        except Exception as e:
-            st.error(f"Error: {e}")
+    st.divider()
+
+    with st.expander("📋 Topics Covered", expanded=True):
+        if st.session_state.model_label == "telecom":
+            for category, items in TELECOM_TOPICS.items():
+                st.markdown(f"**{category}**")
+                for item in items:
+                    st.markdown(f"- {item}")
+        else:
+            st.caption("150 intents grouped by category:")
+            for category, count in GENERAL_TOPICS.items():
+                st.markdown(
+                    f"- {category}  \n  <span style='opacity:0.6;font-size:0.8em'>~{count} intents</span>",
+                    unsafe_allow_html=True,
+                )
+
+    st.divider()
+    st.markdown("#### 💡 Try asking")
+
+    st.markdown("**🗣️ Pidgin**")
+    for q in PIDGIN_EXAMPLES:
+        if st.button(q, key=f"pg_{q}", use_container_width=True):
+            classify_text(q, st.session_state.model_label)
+            st.rerun()
+
+    st.markdown("**🇬🇧 Plain English**")
+    for q in ENGLISH_EXAMPLES:
+        if st.button(q, key=f"en_{q}", use_container_width=True):
+            classify_text(q, st.session_state.model_label)
+            st.rerun()
+
+# ---------------------------------------------------------------------------
+# Main heading
+# ---------------------------------------------------------------------------
+st.markdown(
+    "<h1 style='text-align:center; margin-bottom:0.2rem;'>Command Classifier</h1>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    "<p style='text-align:center; color:gray; font-size:1.05rem;'>"
+    "Say what you need — in English or Pidgin — and get routed instantly.</p>",
+    unsafe_allow_html=True,
+)
+st.write("")
+
+# ---------------------------------------------------------------------------
+# Model selector card
+# ---------------------------------------------------------------------------
+st.markdown('<div class="model-card">', unsafe_allow_html=True)
+st.markdown("<p style='margin-bottom:0.4rem; font-weight:600;'>Model</p>", unsafe_allow_html=True)
+model_label = st.radio(
+    "Model",
+    options=["telecom", "general"],
+    format_func=lambda x: "📡 Telecom IVR" if x == "telecom" else "🌍 General Assistant",
+    horizontal=True,
+    label_visibility="collapsed",
+)
+st.session_state.model_label = model_label
+st.markdown('</div>', unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Content card: tabs for results / voice info / full intent list
+# ---------------------------------------------------------------------------
+st.markdown('<div class="content-card">', unsafe_allow_html=True)
+tab_result, tab_voice, tab_intents = st.tabs(["💬 Result", "🎙️ Voice Tips", "📋 All Supported Intents"])
+
+with tab_result:
+    render_result(st.session_state.last_result)
 
 with tab_voice:
-    st.caption("Short audio clips work best (wav/mp3/m4a). Speech is transcribed with Whisper, then classified.")
-    audio_file = st.file_uploader("Upload audio", type=["wav", "mp3", "m4a", "ogg"], label_visibility="collapsed")
-    if audio_file is not None and st.button("Classify audio", key="audio_btn", type="primary"):
-        with st.spinner("Transcribing and classifying..."):
-            try:
-                files = {"file": (audio_file.name, audio_file.getvalue())}
-                resp = requests.post(
-                    f"{API_URL}/predict/audio",
-                    params={"model": model_label},
-                    files=files,
-                    timeout=60,
-                )
-                resp.raise_for_status()
-                render_result(resp.json())
-            except requests.exceptions.ConnectionError:
-                st.error(f"Can't reach the API at {API_URL}. Is the backend running?")
-            except Exception as e:
-                st.error(f"Error: {e}")
+    st.markdown(
+        "Use the **🎤 record button** in the message bar at the bottom of the page to speak a command, "
+        "or attach a short audio file (wav/mp3/m4a) with the **📎 attach icon**.\n\n"
+        "Your speech is transcribed with Whisper, then classified the same way as typed text."
+    )
 
 with tab_intents:
     st.caption(f"Full intent list for the **{model_label}** model")
@@ -202,3 +254,29 @@ with tab_intents:
             cols[i % 3].markdown(f"- `{intent}`")
     except Exception:
         st.info("Connect to the API to see the live intent list.")
+
+st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown(
+    "<p style='text-align:center; color:gray; font-size:0.8rem; margin-top:1.4rem;'>"
+    "Voice/Text Command Classifier • AI/ML Project<br>"
+    "Powered by TF-IDF + Logistic Regression, and OpenAI Whisper for speech</p>",
+    unsafe_allow_html=True,
+)
+
+# ---------------------------------------------------------------------------
+# Floating input, fixed to the bottom of the page (native st.chat_input
+# behavior — no CSS positioning needed). Supports typed text AND in-browser
+# voice recording in one control.
+# ---------------------------------------------------------------------------
+chat_value = st.chat_input(
+    placeholder="Type a command, or tap the mic to speak it...",
+    accept_audio=True,
+)
+
+if chat_value:
+    if chat_value.audio is not None:
+        classify_audio(chat_value.audio.getvalue(), "recording.wav", st.session_state.model_label)
+    elif chat_value.text.strip():
+        classify_text(chat_value.text, st.session_state.model_label)
+    st.rerun()
