@@ -1,0 +1,881 @@
+text,intent
+I have an issue I want to complain about,general_complaint
+I want to report a fraudulent transaction,report_fraud
+buy 10GB monthly data bundle,buy_data_bundle
+how far,greeting
+what is my airtime balance,check_balance
+"please deactivate my line, it was stolen",block_sim
+I want to see my internet data balance,check_data_balance
+I want to call my mum,call_contact
+load 1GB data for me now,buy_data_bundle
+tell me how much credit I have,check_balance
+I need my number reactivated,unblock_sim
+can you turn on international roaming for me,activate_roaming
+e no correct,no
+make I lodge complaint about una service,general_complaint
+I am not happy with your service,general_complaint
+please cancel this request,cancel
+escalate this to a live agent,speak_to_agent
+good afternoon,greeting
+that's right,yes
+"I no wan talk to robot, give me person",speak_to_agent
+is there any special package available,check_offers
+load 1GB data for me now,buy_data_bundle
+am I talking to a real person,are_you_a_bot
+no thank you,no
+"e do, thank you",thank_you
+call the office,call_contact
+how you dey,greeting
+what is my airtime balance,check_balance
+there is an unauthorized deduction on my account,report_fraud
+how much money do I have on my line,check_balance
+"please deactivate my line, it was stolen",block_sim
+abeg repeat wetin you talk,repeat
+"abeg activate roaming, I dey travel soon",activate_roaming
+can you turn on international roaming for me,activate_roaming
+I want to speak to a human agent,speak_to_agent
+abeg any offer dey now,check_offers
+I need to block my line before someone uses it,block_sim
+"block this number, someone stole my phone",block_sim
+escalate this to a live agent,speak_to_agent
+are you a robot,are_you_a_bot
+how much MB or GB I get now,check_data_balance
+"I am travelling, please enable roaming",activate_roaming
+I want to use my line when I travel out of the country,activate_roaming
+"e do, thank you",thank_you
+activate international roaming on my line,activate_roaming
+"my line was blocked by mistake, please unblock it",unblock_sim
+add 50 naira airtime abeg,recharge_airtime
+tell me my remaining internet data,check_data_balance
+abeg change my plan to the student plan,change_plan
+make I lodge complaint about una service,general_complaint
+add 200 naira airtime abeg,recharge_airtime
+stop the process,cancel
+network dey bad for my side,report_network_issue
+I want to use my line when I travel out of the country,activate_roaming
+enable my line for use abroad,activate_roaming
+how much MB or GB I get now,check_data_balance
+change my current plan,change_plan
+yes that's correct,yes
+call my broda,call_contact
+not that one,no
+"I no wan talk to robot, give me person",speak_to_agent
+activate international roaming on my line,activate_roaming
+hello,greeting
+are you an actual agent or AI,are_you_a_bot
+alright thanks a lot,goodbye
+data balance enquiry,check_data_balance
+tell me about ongoing promos,check_offers
+correct,yes
+tell me my remaining internet data,check_data_balance
+balance enquiry,check_balance
+please dial my mum,call_contact
+I want to recharge 50 naira,recharge_airtime
+activate 10GB monthly internet plan for me,buy_data_bundle
+check my balance,check_balance
+"abeg thank you o, God bless",thank_you
+I am not getting network in my area,report_network_issue
+hi there,greeting
+are you an actual agent or AI,are_you_a_bot
+"please restore my SIM, it was blocked wrongly",unblock_sim
+I received a fraud SMS pretending to be from you,report_fraud
+downgrade my current subscription plan,change_plan
+how you dey,greeting
+check my balance,check_balance
+network keeps dropping calls,report_network_issue
+wetin remain for my data,check_data_balance
+unblock my SIM card,unblock_sim
+I want to call Chidi,call_contact
+"I no hear well, repeat am",repeat
+are you an actual agent or AI,are_you_a_bot
+"my phone was stolen, please block it now",block_sim
+data balance enquiry,check_data_balance
+yes that's correct,yes
+check my balance,check_balance
+fund my line 200 naira,recharge_airtime
+I have an issue I want to complain about,general_complaint
+internet on my phone is not loading anything,report_network_issue
+someone used my line to scam people,report_fraud
+"no more questions, bye bye",goodbye
+is this a human or a machine,are_you_a_bot
+I appreciate your help,thank_you
+e correct,yes
+you be person or na machine,are_you_a_bot
+are you an actual agent or AI,are_you_a_bot
+I need to talk to someone about my account,speak_to_agent
+"thank you, goodbye",goodbye
+internet on my phone is not loading anything,report_network_issue
+no please,no
+give me 500MB data,buy_data_bundle
+correct,yes
+buy 5GB weekly data bundle,buy_data_bundle
+come again,repeat
+tell me my remaining internet data,check_data_balance
+abeg any offer dey now,check_offers
+"I can't make calls, network is poor",report_network_issue
+suspend my line immediately,block_sim
+say that one more time,repeat
+fund my line 100 naira,recharge_airtime
+what offers do you have for me,check_offers
+fund my line 50 naira,recharge_airtime
+switch me from this plan to another one,change_plan
+"block my SIM card, I lost my phone",block_sim
+network keeps dropping calls,report_network_issue
+turn on roaming service for me,activate_roaming
+load 10GB monthly data for me now,buy_data_bundle
+purchase 500MB bundle,buy_data_bundle
+"I don't want to continue, cancel it",cancel
+"no more questions, bye bye",goodbye
+I think my account has been compromised,report_fraud
+"I don't want to continue, cancel it",cancel
+"no more questions, bye bye",goodbye
+show me my account balance,check_balance
+check my data balance,check_data_balance
+tell me how much credit I have,check_balance
+is this a human or a machine,are_you_a_bot
+abeg change my plan to the student plan,change_plan
+abeg cancel am,cancel
+"abeg thank you o, God bless",thank_you
+how you dey,greeting
+no please,no
+"I didn't hear you, say it again",repeat
+phone my broda for me,call_contact
+ok thank you,goodbye
+please cancel this request,cancel
+yes please go ahead,yes
+this network is disappointing me,general_complaint
+"thank you, goodbye",goodbye
+buy me 500 naira recharge card,recharge_airtime
+"I can't make calls, network is poor",report_network_issue
+abeg yes na,yes
+any promo available now,check_offers
+I need to block my line before someone uses it,block_sim
+thanks a lot,thank_you
+"abeg block my SIM sharp sharp, dem steal my phone",block_sim
+that's right,yes
+abeg change my plan to the student plan,change_plan
+I need to talk to someone about my account,speak_to_agent
+am I talking to a real person,are_you_a_bot
+buy 5GB weekly data bundle,buy_data_bundle
+can you unblock this line for me,unblock_sim
+report network problem,report_network_issue
+abeg no,no
+are you a robot,are_you_a_bot
+I want to raise an official complaint,general_complaint
+unblock my SIM card,unblock_sim
+purchase 1GB bundle,buy_data_bundle
+"block my SIM card, I lost my phone",block_sim
+cancel that,cancel
+tell me my remaining internet data,check_data_balance
+I am not getting network in my area,report_network_issue
+"never mind, cancel",cancel
+are you an actual agent or AI,are_you_a_bot
+no thank you,no
+can you unblock this line for me,unblock_sim
+I want to migrate to a new tariff,change_plan
+yes please go ahead,yes
+check my data balance,check_data_balance
+abeg yes na,yes
+ok thank you,goodbye
+tell me about ongoing promos,check_offers
+ok thank you,goodbye
+abeg no,no
+check my balance,check_balance
+no,no
+am I talking to a real person,are_you_a_bot
+"thank you, that helped me well",thank_you
+I want to call my broda,call_contact
+can you unblock this line for me,unblock_sim
+alright thanks a lot,goodbye
+no please,no
+"your customer service is poor, I want to complain",general_complaint
+"I didn't hear you, say it again",repeat
+how much airtime remain,check_balance
+say that one more time,repeat
+hi there,greeting
+abeg change my plan to the student plan,change_plan
+"I no hear well, repeat am",repeat
+can you repeat that,repeat
+is this a human or a machine,are_you_a_bot
+thanks a lot,thank_you
+there is an unauthorized deduction on my account,report_fraud
+move me to the cheaper plan,change_plan
+na human dey answer me or na bot,are_you_a_bot
+stop the process,cancel
+"please deactivate my line, it was stolen",block_sim
+"thank you, that helped me well",thank_you
+say that one more time,repeat
+stop the process,cancel
+good morning,greeting
+hi there,greeting
+come again,repeat
+internet on my phone is not loading anything,report_network_issue
+"your customer service is poor, I want to complain",general_complaint
+how you dey,greeting
+"abeg unblock my line, na mistake dem block am",unblock_sim
+I want to raise an official complaint,general_complaint
+"thank you, that helped me well",thank_you
+yes that's correct,yes
+I want to file a complaint,general_complaint
+no please,no
+I received a fraud SMS pretending to be from you,report_fraud
+please recharge my number with 200 naira,recharge_airtime
+alright thanks a lot,goodbye
+abeg change my plan to the student plan,change_plan
+I want to recharge 500 naira,recharge_airtime
+report suspicious activity on my account,report_fraud
+"I no hear well, repeat am",repeat
+e correct,yes
+"I no wan talk to robot, give me person",speak_to_agent
+no signal for my phone since morning,report_network_issue
+come again,repeat
+say that one more time,repeat
+internet on my phone is not loading anything,report_network_issue
+"I am travelling, please enable roaming",activate_roaming
+good morning,greeting
+please dial Blessing,call_contact
+I have an issue I want to complain about,general_complaint
+that's right,yes
+can you repeat that,repeat
+I want to switch to a different tariff plan,change_plan
+tell me how much credit I have,check_balance
+no please,no
+network keeps dropping calls,report_network_issue
+how much data do I have left,check_data_balance
+I need my number reactivated,unblock_sim
+tell me my remaining internet data,check_data_balance
+abeg repeat wetin you talk,repeat
+are you an actual agent or AI,are_you_a_bot
+cancel that,cancel
+call my mum,call_contact
+balance enquiry,check_balance
+no thank you,no
+e correct,yes
+I received a fraud SMS pretending to be from you,report_fraud
+how much MB or GB I get now,check_data_balance
+abeg cancel am,cancel
+please recharge my number with 200 naira,recharge_airtime
+cancel that,cancel
+add 50 naira airtime abeg,recharge_airtime
+"e do, thank you",thank_you
+"abeg thank you o, God bless",thank_you
+show my remaining data,check_data_balance
+abeg change my plan to the student plan,change_plan
+wetin be my balance now,check_balance
+"block this number, someone stole my phone",block_sim
+that's right,yes
+I want to migrate to a new tariff,change_plan
+connect me to a customer care agent,speak_to_agent
+put me through to an agent,speak_to_agent
+please cancel this request,cancel
+enable my line for use abroad,activate_roaming
+abeg check my balance for me,check_balance
+"that's all, bye",goodbye
+I appreciate your help,thank_you
+transfer me to customer service,speak_to_agent
+I want to call my broda,call_contact
+I appreciate your help,thank_you
+yes please go ahead,yes
+good afternoon,greeting
+I want to raise an official complaint,general_complaint
+e no correct,no
+suspend my line immediately,block_sim
+call Ngozi,call_contact
+please set up roaming before my flight,activate_roaming
+no,no
+that's not correct,no
+"deactivate this number now, it's not safe",block_sim
+I am dissatisfied with the service provided,general_complaint
+recharge my line with 200 naira,recharge_airtime
+network dey bad for my side,report_network_issue
+"I don't want to continue, cancel it",cancel
+please set up roaming before my flight,activate_roaming
+call Ngozi,call_contact
+hello,greeting
+I want to flag unauthorized charges on my line,report_fraud
+data balance enquiry,check_data_balance
+upgrade my plan to the premium one,change_plan
+how much money do I have on my line,check_balance
+please put me on hold for an agent,speak_to_agent
+I get complaint about how una dey handle customers,general_complaint
+balance enquiry,check_balance
+"I no hear well, repeat am",repeat
+is this a human or a machine,are_you_a_bot
+I want to call my mum,call_contact
+I want to subscribe to 500MB plan,buy_data_bundle
+load 50 naira credit on my phone,recharge_airtime
+I appreciate your help,thank_you
+I dey experience network issue for my location,report_network_issue
+are there any discounts on data bundles,check_offers
+ok thank you,goodbye
+I need roaming activated before my trip,activate_roaming
+"please restore my SIM, it was blocked wrongly",unblock_sim
+abeg no,no
+downgrade my current subscription plan,change_plan
+reactivate my line please,unblock_sim
+I want to block this number urgently,block_sim
+please dial Ngozi,call_contact
+no please,no
+turn on roaming service for me,activate_roaming
+someone used my line to scam people,report_fraud
+hello,greeting
+ok thank you,goodbye
+"I no like this plan again, change am for me",change_plan
+call Blessing,call_contact
+are there any discounts on data bundles,check_offers
+ring Chidi,call_contact
+there is an unauthorized deduction on my account,report_fraud
+"my line was blocked by mistake, please unblock it",unblock_sim
+I received a fraud SMS pretending to be from you,report_fraud
+abeg any offer dey now,check_offers
+"I can't make calls, network is poor",report_network_issue
+yes that's correct,yes
+e correct,yes
+call the office,call_contact
+connect me to a customer care agent,speak_to_agent
+you be person or na machine,are_you_a_bot
+please set up roaming before my flight,activate_roaming
+abeg I wan report one fraud transaction,report_fraud
+I need roaming activated before my trip,activate_roaming
+hi there,greeting
+abeg I wan report one fraud transaction,report_fraud
+buy me 500 naira recharge card,recharge_airtime
+what is my airtime balance,check_balance
+I think my account has been compromised,report_fraud
+upgrade my plan to the premium one,change_plan
+please cancel this request,cancel
+I want to recharge 200 naira,recharge_airtime
+upgrade my plan to the premium one,change_plan
+balance enquiry,check_balance
+no thank you,no
+ok thank you,goodbye
+call my broda,call_contact
+stop the process,cancel
+good afternoon,greeting
+how you dey,greeting
+buy 500MB data bundle,buy_data_bundle
+abeg any offer dey now,check_offers
+I think my account has been compromised,report_fraud
+what is my airtime balance,check_balance
+"my line was blocked by mistake, please unblock it",unblock_sim
+abeg no,no
+change my current plan,change_plan
+I have an issue I want to complain about,general_complaint
+"I didn't hear you, say it again",repeat
+e no correct,no
+transfer me to customer service,speak_to_agent
+how much MB or GB I get now,check_data_balance
+am I talking to a real person,are_you_a_bot
+I want to subscribe to 1GB plan,buy_data_bundle
+turn on roaming service for me,activate_roaming
+network keeps dropping calls,report_network_issue
+are there any discounts on data bundles,check_offers
+"no more questions, bye bye",goodbye
+there is an unauthorized deduction on my account,report_fraud
+how much data do I have left,check_data_balance
+correct,yes
+I want to call Emeka,call_contact
+buy me 50 naira recharge card,recharge_airtime
+tell me my remaining internet data,check_data_balance
+I need to block my line before someone uses it,block_sim
+are you an actual agent or AI,are_you_a_bot
+load 500 naira credit on my phone,recharge_airtime
+I dey experience network issue for my location,report_network_issue
+purchase 500MB bundle,buy_data_bundle
+can you unblock this line for me,unblock_sim
+no,no
+I want to file a complaint,general_complaint
+"abeg activate roaming, I dey travel soon",activate_roaming
+I want to talk to a real person now,speak_to_agent
+wetin be the latest offer,check_offers
+activate international roaming on my line,activate_roaming
+my network is not working,report_network_issue
+ring the office,call_contact
+phone my mum for me,call_contact
+I want to switch to a different tariff plan,change_plan
+"that's all, bye",goodbye
+list out your current promotions for me,check_offers
+unblock this number for me,unblock_sim
+yes please go ahead,yes
+abeg check my balance for me,check_balance
+I want to restore my blocked number,unblock_sim
+fund my line 1000 naira,recharge_airtime
+no signal for my phone since morning,report_network_issue
+abeg any offer dey now,check_offers
+yes,yes
+add 100 naira airtime abeg,recharge_airtime
+na human dey answer me or na bot,are_you_a_bot
+that's right,yes
+top up my airtime with 1000 naira,recharge_airtime
+how you dey,greeting
+ok thank you,goodbye
+thanks a lot,thank_you
+I think my account has been compromised,report_fraud
+top up my airtime with 1000 naira,recharge_airtime
+my network is not working,report_network_issue
+abeg add 2GB data on my line,buy_data_bundle
+stop the process,cancel
+how far,greeting
+am I talking to a real person,are_you_a_bot
+internet on my phone is not loading anything,report_network_issue
+recharge my line with 200 naira,recharge_airtime
+please repeat,repeat
+ring the office,call_contact
+transfer me to customer service,speak_to_agent
+that's right,yes
+is this a human or a machine,are_you_a_bot
+I am not getting network in my area,report_network_issue
+connect me to a customer care agent,speak_to_agent
+can you repeat that,repeat
+I want to raise an official complaint,general_complaint
+correct,yes
+thank you very much,thank_you
+show me current data promotions,check_offers
+call Emeka,call_contact
+thanks a lot,thank_you
+move me to the cheaper plan,change_plan
+how you dey,greeting
+I need roaming activated before my trip,activate_roaming
+I get complaint about how una dey handle customers,general_complaint
+I want to switch to a different tariff plan,change_plan
+how far,greeting
+are you an actual agent or AI,are_you_a_bot
+connect me to a customer care agent,speak_to_agent
+hello,greeting
+is this a human or a machine,are_you_a_bot
+na human dey answer me or na bot,are_you_a_bot
+I want to subscribe to 5GB weekly plan,buy_data_bundle
+abeg no,no
+please cancel this request,cancel
+please cancel this request,cancel
+network keeps dropping calls,report_network_issue
+"I don't want to continue, cancel it",cancel
+"my line was blocked by mistake, please unblock it",unblock_sim
+unblock my SIM card,unblock_sim
+no,no
+unblock my SIM card,unblock_sim
+ok thank you,goodbye
+hello,greeting
+"no more questions, bye bye",goodbye
+"e do, thank you",thank_you
+how you dey,greeting
+you be person or na machine,are_you_a_bot
+add 100 naira airtime abeg,recharge_airtime
+I received a fraud SMS pretending to be from you,report_fraud
+that's not correct,no
+put me through to an agent,speak_to_agent
+how far,greeting
+is there any special package available,check_offers
+"block this number, someone stole my phone",block_sim
+I am not happy with your service,general_complaint
+downgrade my current subscription plan,change_plan
+please put me on hold for an agent,speak_to_agent
+alright thanks a lot,goodbye
+I need roaming activated before my trip,activate_roaming
+"I didn't hear you, say it again",repeat
+I want to know my balance,check_balance
+ok thank you,goodbye
+abeg cancel am,cancel
+connect me to a customer care agent,speak_to_agent
+activate 5GB weekly internet plan for me,buy_data_bundle
+"my phone don loss, block the SIM abeg",block_sim
+am I talking to a real person,are_you_a_bot
+there is an unauthorized deduction on my account,report_fraud
+I want to call my broda,call_contact
+enable my line for use abroad,activate_roaming
+what offers do you have for me,check_offers
+come again,repeat
+"abeg unblock my line, na mistake dem block am",unblock_sim
+e no correct,no
+check my data balance,check_data_balance
+"please deactivate my line, it was stolen",block_sim
+ok thank you,goodbye
+na human dey answer me or na bot,are_you_a_bot
+I want to restore my blocked number,unblock_sim
+suspend my line immediately,block_sim
+network dey bad for my side,report_network_issue
+any promo available now,check_offers
+I want to speak to a human agent,speak_to_agent
+I am dissatisfied with the service provided,general_complaint
+how much money do I have on my line,check_balance
+any promo available now,check_offers
+fund my line 1000 naira,recharge_airtime
+I want to block this number urgently,block_sim
+"I no wan talk to robot, give me person",speak_to_agent
+I want to cancel this,cancel
+how far,greeting
+I get complaint about how una dey handle customers,general_complaint
+alright thanks a lot,goodbye
+how much data do I have left,check_data_balance
+"abeg thank you o, God bless",thank_you
+I dey experience network issue for my location,report_network_issue
+I want to restore my blocked number,unblock_sim
+"my phone don loss, block the SIM abeg",block_sim
+what offers do you have for me,check_offers
+e no correct,no
+"that's all, bye",goodbye
+I want to know my balance,check_balance
+abeg how much data I still get,check_data_balance
+my network is not working,report_network_issue
+alright thanks a lot,goodbye
+give me 10GB monthly data,buy_data_bundle
+"never mind, cancel",cancel
+can you unblock this line for me,unblock_sim
+stop the process,cancel
+load 5GB weekly data for me now,buy_data_bundle
+abeg no,no
+"I no wan talk to robot, give me person",speak_to_agent
+please put me on hold for an agent,speak_to_agent
+abeg connect me to person wey fit help me,speak_to_agent
+please repeat,repeat
+please put me on hold for an agent,speak_to_agent
+load 10GB monthly data for me now,buy_data_bundle
+say that one more time,repeat
+downgrade my current subscription plan,change_plan
+buy me 500 naira recharge card,recharge_airtime
+tell me how much credit I have,check_balance
+please put me on hold for an agent,speak_to_agent
+abeg how much data I still get,check_data_balance
+good afternoon,greeting
+I want to subscribe to 5GB weekly plan,buy_data_bundle
+yes please go ahead,yes
+abeg cancel am,cancel
+that's not correct,no
+recharge my line with 500 naira,recharge_airtime
+thank you very much,thank_you
+tell me about ongoing promos,check_offers
+stop the process,cancel
+are there any discounts on data bundles,check_offers
+"block this number, someone stole my phone",block_sim
+report suspicious activity on my account,report_fraud
+yes,yes
+I want to speak to a human agent,speak_to_agent
+good afternoon,greeting
+balance enquiry,check_balance
+"my line was blocked by mistake, please unblock it",unblock_sim
+say that one more time,repeat
+is this a human or a machine,are_you_a_bot
+tell me my remaining internet data,check_data_balance
+abeg cancel am,cancel
+no,no
+enable my line for use abroad,activate_roaming
+phone my mum for me,call_contact
+list out your current promotions for me,check_offers
+there is an unauthorized deduction on my account,report_fraud
+tell me about ongoing promos,check_offers
+abeg add 2GB data on my line,buy_data_bundle
+call the office,call_contact
+I want to cancel this,cancel
+alright thanks a lot,goodbye
+am I talking to a real person,are_you_a_bot
+I get complaint about how una dey handle customers,general_complaint
+I want to restore my blocked number,unblock_sim
+what is my airtime balance,check_balance
+please recharge my number with 50 naira,recharge_airtime
+buy 500MB data bundle,buy_data_bundle
+wetin remain for my data,check_data_balance
+I need roaming activated before my trip,activate_roaming
+"abeg thank you o, God bless",thank_you
+there is an unauthorized deduction on my account,report_fraud
+top up my airtime with 200 naira,recharge_airtime
+I want to speak to a human agent,speak_to_agent
+I want to migrate to a new tariff,change_plan
+hello,greeting
+how much airtime remain,check_balance
+make I lodge complaint about una service,general_complaint
+abeg cancel am,cancel
+what is my current data usage balance,check_data_balance
+is there any special package available,check_offers
+I appreciate your help,thank_you
+suspend my line immediately,block_sim
+tell me about ongoing promos,check_offers
+are you a robot,are_you_a_bot
+abeg add 2GB data on my line,buy_data_bundle
+please dial Ngozi,call_contact
+"deactivate this number now, it's not safe",block_sim
+please repeat,repeat
+I want to use my line when I travel out of the country,activate_roaming
+"thank you, goodbye",goodbye
+cancel that,cancel
+how you dey,greeting
+please set up roaming before my flight,activate_roaming
+put me through to an agent,speak_to_agent
+buy 10GB monthly data bundle,buy_data_bundle
+buy me 50 naira recharge card,recharge_airtime
+I think my account has been compromised,report_fraud
+wetin remain for my data,check_data_balance
+no please,no
+alright thanks a lot,goodbye
+this network is disappointing me,general_complaint
+I want to block this number urgently,block_sim
+no signal for my phone since morning,report_network_issue
+"I didn't hear you, say it again",repeat
+"your customer service is poor, I want to complain",general_complaint
+correct,yes
+list out your current promotions for me,check_offers
+phone Blessing for me,call_contact
+I want to subscribe to 2GB plan,buy_data_bundle
+put me through to an agent,speak_to_agent
+you be person or na machine,are_you_a_bot
+"I no hear well, repeat am",repeat
+move me to the cheaper plan,change_plan
+e correct,yes
+no,no
+abeg repeat wetin you talk,repeat
+any promo available now,check_offers
+"never mind, cancel",cancel
+abeg check my balance for me,check_balance
+I want to report a fraudulent transaction,report_fraud
+I want to restore my blocked number,unblock_sim
+please recharge my number with 50 naira,recharge_airtime
+how much data do I have left,check_data_balance
+buy 1GB data bundle,buy_data_bundle
+I appreciate your help,thank_you
+my network is not working,report_network_issue
+I want to speak to a human agent,speak_to_agent
+are there any discounts on data bundles,check_offers
+ok thank you,goodbye
+"I no wan talk to robot, give me person",speak_to_agent
+"my line was blocked by mistake, please unblock it",unblock_sim
+I get complaint about how una dey handle customers,general_complaint
+"no more questions, bye bye",goodbye
+I want to recharge 100 naira,recharge_airtime
+that's right,yes
+what is my airtime balance,check_balance
+reactivate my line please,unblock_sim
+enable my line for use abroad,activate_roaming
+wetin be my balance now,check_balance
+"thank you, that helped me well",thank_you
+"my line was blocked by mistake, please unblock it",unblock_sim
+good afternoon,greeting
+yes,yes
+abeg cancel am,cancel
+e no correct,no
+suspend my line immediately,block_sim
+check my data balance,check_data_balance
+can you repeat that,repeat
+abeg any offer dey now,check_offers
+I want to talk to a real person now,speak_to_agent
+reactivate my line please,unblock_sim
+not that one,no
+"my phone was stolen, please block it now",block_sim
+enable my line for use abroad,activate_roaming
+"abeg thank you o, God bless",thank_you
+yes that's correct,yes
+cancel that,cancel
+"never mind, cancel",cancel
+are you an actual agent or AI,are_you_a_bot
+recharge my line with 100 naira,recharge_airtime
+I am not getting network in my area,report_network_issue
+ring Emeka,call_contact
+correct,yes
+I want to flag unauthorized charges on my line,report_fraud
+how much airtime remain,check_balance
+I need to block my line before someone uses it,block_sim
+abeg I wan report one fraud transaction,report_fraud
+"my phone don loss, block the SIM abeg",block_sim
+"thank you, that helped me well",thank_you
+abeg repeat wetin you talk,repeat
+escalate this to a live agent,speak_to_agent
+purchase 5GB weekly bundle,buy_data_bundle
+good morning,greeting
+I want to file a complaint,general_complaint
+suspend my line immediately,block_sim
+"that's all, bye",goodbye
+wetin be the latest offer,check_offers
+"that's all, bye",goodbye
+abeg how much data I still get,check_data_balance
+there is no network coverage where I am,report_network_issue
+network keeps dropping calls,report_network_issue
+"I can't make calls, network is poor",report_network_issue
+good afternoon,greeting
+you be person or na machine,are_you_a_bot
+call Blessing,call_contact
+"deactivate this number now, it's not safe",block_sim
+abeg add 5GB weekly data on my line,buy_data_bundle
+there is an unauthorized deduction on my account,report_fraud
+list out your current promotions for me,check_offers
+any promo available now,check_offers
+"abeg unblock my line, na mistake dem block am",unblock_sim
+I want to recharge 200 naira,recharge_airtime
+upgrade my plan to the premium one,change_plan
+I want to recharge 100 naira,recharge_airtime
+"I no hear well, repeat am",repeat
+"please restore my SIM, it was blocked wrongly",unblock_sim
+report network problem,report_network_issue
+I received a fraud SMS pretending to be from you,report_fraud
+no,no
+I'm grateful for your help,thank_you
+show my remaining data,check_data_balance
+abeg I wan report one fraud transaction,report_fraud
+data balance enquiry,check_data_balance
+"I no wan talk to robot, give me person",speak_to_agent
+can you repeat that,repeat
+yes that's correct,yes
+"thank you, that helped me well",thank_you
+I need to block my line before someone uses it,block_sim
+add 50 naira airtime abeg,recharge_airtime
+"thank you, goodbye",goodbye
+what is my airtime balance,check_balance
+ring the office,call_contact
+I get complaint about how una dey handle customers,general_complaint
+thanks a lot,thank_you
+upgrade my plan to the premium one,change_plan
+is there any special package available,check_offers
+please dial Blessing,call_contact
+e correct,yes
+change my current plan,change_plan
+show my remaining data,check_data_balance
+"abeg thank you o, God bless",thank_you
+turn on roaming service for me,activate_roaming
+yes,yes
+"no more questions, bye bye",goodbye
+switch me from this plan to another one,change_plan
+I need to block my line before someone uses it,block_sim
+I am dissatisfied with the service provided,general_complaint
+load 200 naira credit on my phone,recharge_airtime
+buy 5GB weekly data bundle,buy_data_bundle
+"thank you, that helped me well",thank_you
+I want to use my line when I travel out of the country,activate_roaming
+I want to subscribe to 10GB monthly plan,buy_data_bundle
+balance enquiry,check_balance
+"I no hear well, repeat am",repeat
+I want to call my broda,call_contact
+that's not correct,no
+report suspicious activity on my account,report_fraud
+what is my current data usage balance,check_data_balance
+I want to migrate to a new tariff,change_plan
+"no more questions, bye bye",goodbye
+make I lodge complaint about una service,general_complaint
+give me 2GB data,buy_data_bundle
+you be person or na machine,are_you_a_bot
+you be person or na machine,are_you_a_bot
+give me 5GB weekly data,buy_data_bundle
+I appreciate your help,thank_you
+thank you very much,thank_you
+tell me about ongoing promos,check_offers
+is there any special package available,check_offers
+please repeat,repeat
+I am not happy with your service,general_complaint
+upgrade my plan to the premium one,change_plan
+top up my airtime with 50 naira,recharge_airtime
+"abeg activate roaming, I dey travel soon",activate_roaming
+"I no wan talk to robot, give me person",speak_to_agent
+"I don't want to continue, cancel it",cancel
+hi there,greeting
+"block this number, someone stole my phone",block_sim
+yes that's correct,yes
+no signal for my phone since morning,report_network_issue
+I want to migrate to a new tariff,change_plan
+I think my account has been compromised,report_fraud
+what offers do you have for me,check_offers
+please dial my broda,call_contact
+"I didn't hear you, say it again",repeat
+upgrade my plan to the premium one,change_plan
+upgrade my plan to the premium one,change_plan
+I get complaint about how una dey handle customers,general_complaint
+please dial Ngozi,call_contact
+there is an unauthorized deduction on my account,report_fraud
+I want to subscribe to 1GB plan,buy_data_bundle
+"your customer service is poor, I want to complain",general_complaint
+thank you very much,thank_you
+good afternoon,greeting
+alright thanks a lot,goodbye
+can you unblock this line for me,unblock_sim
+that's not correct,no
+unblock this number for me,unblock_sim
+I want to know my balance,check_balance
+please repeat,repeat
+I have an issue I want to complain about,general_complaint
+upgrade my plan to the premium one,change_plan
+I need roaming activated before my trip,activate_roaming
+reactivate my line please,unblock_sim
+buy me 50 naira recharge card,recharge_airtime
+abeg add 2GB data on my line,buy_data_bundle
+"I don't want to continue, cancel it",cancel
+I want to call my mum,call_contact
+"that's all, bye",goodbye
+no signal for my phone since morning,report_network_issue
+tell me about ongoing promos,check_offers
+I want to subscribe to 10GB monthly plan,buy_data_bundle
+say that one more time,repeat
+somebody don use my number scam person,report_fraud
+suspend my line immediately,block_sim
+I am dissatisfied with the service provided,general_complaint
+I have an issue I want to complain about,general_complaint
+please set up roaming before my flight,activate_roaming
+I want to block this number urgently,block_sim
+e no correct,no
+phone Ngozi for me,call_contact
+unblock my SIM card,unblock_sim
+no,no
+you be person or na machine,are_you_a_bot
+purchase 1GB bundle,buy_data_bundle
+I appreciate your help,thank_you
+abeg add 1GB data on my line,buy_data_bundle
+there is an unauthorized deduction on my account,report_fraud
+show my remaining data,check_data_balance
+"I no wan talk to robot, give me person",speak_to_agent
+show my remaining data,check_data_balance
+enable my line for use abroad,activate_roaming
+how far,greeting
+balance enquiry,check_balance
+hello,greeting
+I want to restore my blocked number,unblock_sim
+"I can't make calls, network is poor",report_network_issue
+abeg no,no
+"my phone don loss, block the SIM abeg",block_sim
+"I no hear well, repeat am",repeat
+"no more questions, bye bye",goodbye
+"abeg thank you o, God bless",thank_you
+wetin be my balance now,check_balance
+load 2GB data for me now,buy_data_bundle
+this network is disappointing me,general_complaint
+e correct,yes
+abeg I wan report one fraud transaction,report_fraud
+unblock my SIM card,unblock_sim
+give me 1GB data,buy_data_bundle
+how you dey,greeting
+"my phone was stolen, please block it now",block_sim
+connect me to a customer care agent,speak_to_agent
+fund my line 500 naira,recharge_airtime
+na human dey answer me or na bot,are_you_a_bot
+someone used my line to scam people,report_fraud
+I'm grateful for your help,thank_you
+I get complaint about how una dey handle customers,general_complaint
+cancel that,cancel
+"no more questions, bye bye",goodbye
+list out your current promotions for me,check_offers
+call Chidi,call_contact
+network dey bad for my side,report_network_issue
+add 100 naira airtime abeg,recharge_airtime
+can you turn on international roaming for me,activate_roaming
+report suspicious activity on my account,report_fraud
+call Blessing,call_contact
+I appreciate your help,thank_you
+check my balance,check_balance
+you be person or na machine,are_you_a_bot
+I want to call my mum,call_contact
+I want to use my line when I travel out of the country,activate_roaming
+"never mind, cancel",cancel
+check my data balance,check_data_balance
+move me to the cheaper plan,change_plan
+"please deactivate my line, it was stolen",block_sim
+change my current plan,change_plan
+show my remaining data,check_data_balance
+I think my account has been compromised,report_fraud
+wetin be my balance now,check_balance
+good morning,greeting
+please cancel this request,cancel
+abeg repeat wetin you talk,repeat
+I want to use my line when I travel out of the country,activate_roaming
+I appreciate your help,thank_you
+reactivate my line please,unblock_sim
+I get complaint about how una dey handle customers,general_complaint
+yes,yes
+can you turn on international roaming for me,activate_roaming
+move me to the cheaper plan,change_plan
+"I can't make calls, network is poor",report_network_issue
+tell me my remaining internet data,check_data_balance
+yes that's correct,yes
+help me change my subscription plan,change_plan

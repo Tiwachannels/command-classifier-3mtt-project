@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: voice-command-classifier-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: WHISPER_MODEL
+        value: tiny
