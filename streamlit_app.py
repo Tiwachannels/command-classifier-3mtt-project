@@ -225,16 +225,25 @@ st.write("")
 # Model selector card
 # ---------------------------------------------------------------------------
 st.markdown('<div class="model-card">', unsafe_allow_html=True)
-st.markdown("<p style='margin-bottom:0.4rem; font-weight:600; font-size:1.2rem;'>Model</p>", unsafe_allow_html=True)
+
+st.markdown(
+    "<p style='margin-bottom:0.4rem; font-weight:600; font-size:1.2rem;'>Model</p>",
+    unsafe_allow_html=True
+)
+
 model_label = st.radio(
     "Model",
     options=["telecom", "general"],
-    format_func=lambda x: "📡 Telecom IVR" if x == "telecom" else "🌍 General Assistant",
+    format_func=lambda x: (
+        "📡 Telecom IVR" if x == "telecom"
+        else "🌍 General Assistant"
+    ),
     horizontal=True,
     label_visibility="collapsed",
+    key="model_label",
 )
-st.session_state.model_label = model_label
-st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
 # Content card: tabs for results / voice info / full intent list
