@@ -1,5 +1,7 @@
-# Voice/Text Command Classifier
+## Voice/Text Command Classifier
 
+## Experience the live demo version of this project at the following link
+## https://voice-text-command-classifier.streamlit.app/
 Classifies spoken or typed commands into intents. Ships with **two models**:
 
 1. **`telecom`** — a Nigerian Pidgin-aware telecom IVR classifier (22 intents: balance
@@ -29,7 +31,7 @@ FastAPI backend (api/main.py)
 - **Fallback:** if the top prediction's confidence is below 0.35, the API returns
   `"unrecognized"` instead of forcing a guess.
 
-## Data provenance (important — read this)
+## Data provenance (important)
 
 ### General model (150 intents)
 Trained on a real-world English intent-classification dataset (CLINC150-style;

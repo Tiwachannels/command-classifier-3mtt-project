@@ -257,7 +257,7 @@ def render_result(result: dict):
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
-    st.markdown("### 🇳🇬 Command Classifier")
+    st.markdown("### Command Classifier")
 
     st.caption(
         "An AI system that understands spoken or typed commands — "
