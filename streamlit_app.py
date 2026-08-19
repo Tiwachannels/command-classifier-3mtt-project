@@ -61,10 +61,21 @@ st.markdown(
             font-size: 0.92rem;
         }
 
-        div[role="radiogroup"] {
-        justify-content: center !important;
-        width: 100% !important;
-        gap: 2rem;
+        /* Center the model selector */
+        div[data-testid="stRadio"] {
+            display: flex;
+            justify-content: center;
+        }
+
+        div[data-testid="stRadio"] > div {
+            width: auto !important;
+        }
+
+        div[data-testid="stRadio"] div[role="radiogroup"] {
+            justify-content: center !important;
+            width: auto !important;
+            display: flex !important;
+            gap: 2.5rem !important;
         }
 
         div[role="radiogroup"] label p {
