@@ -62,8 +62,9 @@ st.markdown(
         }
 
         div[role="radiogroup"] {
-            justify-content: center;
-            gap: 1.5rem;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 2rem;
         }
 
         div[role="radiogroup"] label p {
